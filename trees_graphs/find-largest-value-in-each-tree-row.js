@@ -22,20 +22,27 @@ var largestValues = function(root) {
     while(queue.length) {
         let currLength = queue.length;
         let maxVal = -Infinity;
+        // We could use nextQueue implementation so we don't have to perform shift since is more expensive
+        // let nextQueue = [];
+
         for (let i = 0; i < currLength; i++) {
             let node = queue.shift();
+            // let node = queue[i]; 
 
             maxVal = Math.max(maxVal, node.val);
 
             if(node.left) {
                 queue.push(node.left);
+                // nextQueue.push(node.left);
             }
 
             if(node.right) {
                 queue.push(node.right);
+                // nextQueue.push(node.right);
             }
         }
         ans.push(maxVal);
+        // queue = nextQueue;
     }
     return ans;
 };
