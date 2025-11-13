@@ -7,3 +7,6 @@ https://leetcode.com/problem-list/ajcqwr0m/
 
 ## Linked List bonus problems
 https://leetcode.com/problem-list/ajc6xcwg/
+
+## Stacks and Queues bonus problems
+https://leetcode.com/problem-list/ajc6l7ge/
