@@ -139,3 +139,7 @@ In a DFS, we prioritize depth by traversing as far down the tree as possible in 
 
 ### Trees and Graphs Bonus Problems
 https://leetcode.com/problem-list/ajc6bx5i/
+
+## Heaps (Priority queue)
+### Heaps Bonus Problems
+https://leetcode.com/problem-list/ajcklrpj/
