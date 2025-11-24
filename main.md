@@ -143,3 +143,7 @@ https://leetcode.com/problem-list/ajc6bx5i/
 ## Heaps (Priority queue)
 ### Heaps Bonus Problems
 https://leetcode.com/problem-list/ajcklrpj/
+
+## Greedy
+### Greedy Bonus Problems
+https://leetcode.com/problem-list/ajckgn15/
