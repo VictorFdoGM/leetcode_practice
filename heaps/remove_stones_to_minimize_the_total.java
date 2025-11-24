@@ -1,0 +1,35 @@
+// Remove Stones to Minimize the Total
+// You are given a 0-indexed integer array piles, where piles[i] represents the number of stones in the ith pile, and an integer k. You should apply the following operation exactly k times:
+
+// Choose any piles[i] and remove floor(piles[i] / 2) stones from it.
+// Notice that you can apply the operation on the same pile more than once.
+
+// Return the minimum possible total number of stones remaining after applying the k operations.
+
+// floor(x) is the largest integer that is smaller than or equal to x (i.e., rounds x down).
+
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
+class Solution {
+    public int minStoneSum(int[] piles, int k) {
+        PriorityQueue<Double> heap = new PriorityQueue<>(Comparator.reverseOrder());
+
+        for (double pile : piles) {
+            heap.add(pile);
+        }
+
+        while (k > 0) {
+            double x = heap.remove();
+            heap.add(x - Math.floor(x / 2));
+            k--;
+        }
+
+        int ans = 0;
+        while (heap.size() > 0) {
+            ans += heap.remove();
+        }
+
+        return ans;
+    }
+}
