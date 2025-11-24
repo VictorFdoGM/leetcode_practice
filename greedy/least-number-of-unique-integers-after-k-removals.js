@@ -15,17 +15,17 @@ var findLeastNumOfUniqueInts = function(arr, k) {
 
     let numFreq = [];
     for (const key in map) {
-        numFreq.push([map[key], key]);
+        numFreq.push(map[key]);
     }
 
     numFreq.sort((a, b) => {
-        return a[0] - b[0];
+        return a - b;
     });
 
     let index = 0;
     for (let i = 0; i < numFreq.length; i++) {
-        if (k - numFreq[i][0] >= 0) {
-            k -= numFreq[i][0];
+        if (k - numFreq[i] >= 0) {
+            k -= numFreq[i];
             index = i + 1;
         }
     }
