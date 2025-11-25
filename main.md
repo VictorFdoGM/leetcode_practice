@@ -147,3 +147,60 @@ https://leetcode.com/problem-list/ajcklrpj/
 ## Greedy
 ### Greedy Bonus Problems
 https://leetcode.com/problem-list/ajckgn15/
+
+## Binary search
+
+### Code to find element when only having unique values.
+let binarySearch = (arr, target) => {
+    let left = 0;
+    let right = arr.length - 1;
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] == target) {
+            // do something
+            return;
+        }
+        if (arr[mid] > target) {
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    // target is not in arr, but left is at the insertion point
+    return left;
+}
+
+### When having duplicate elements, get the right most element
+
+let binarySearch = (arr, target) => {
+    let left = 0;
+    let right = arr.length;
+    while (left < right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] >= target) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return left;
+}
+
+### When having duplicate elements, get the left most element.
+
+let binarySearch = (arr, target) => {
+    let left = 0;
+    let right = arr.length;
+    while (left < right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] > target) {
+            right = mid;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return left;
+}
