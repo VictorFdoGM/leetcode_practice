@@ -204,3 +204,6 @@ let binarySearch = (arr, target) => {
 
     return left;
 }
+
+### Binary Search Bonus problems
+https://leetcode.com/problem-list/ajcgv2cg/
