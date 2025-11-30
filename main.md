@@ -212,3 +212,12 @@ https://leetcode.com/problem-list/ajcgv2cg/
 
 ### Backtracking Bonus problems
 https://leetcode.com/problem-list/ajcgkew2/
+
+## Dynamic programming
+The three main components of the framework are:
+1.- The base cases
+2.- The recurrence relation
+3.- A data structure and a way of visiting each DP state
+
+## Dynamic programming bonus problem
+https://leetcode.com/problem-list/ajczh9c3/
