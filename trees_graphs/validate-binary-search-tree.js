@@ -1,4 +1,4 @@
-// 98. Validate Binary Search Tree
+// Validate Binary Search Tree
 // Given the root of a binary tree, determine if it is a valid binary search tree (BST).
 
 // A valid BST is defined as follows:
@@ -6,7 +6,6 @@
 // The left subtree of a node contains only nodes with keys strictly less than the node's key.
 // The right subtree of a node contains only nodes with keys strictly greater than the node's key.
 // Both the left and right subtrees must also be binary search trees.
-
 
 /**
  * Definition for a binary tree node.
@@ -17,80 +16,14 @@
  * }
  */
 /**
- * My code submission
  * @param {TreeNode} root
  * @return {boolean}
  */
 var isValidBST = function(root, min = -Infinity, max = Infinity) {
+    
     if (!root) return true;
 
-    let isValid = true;
-
-    if (min >= root.val || root.val >= max) return false;
-
-    if (root.left) {
-        isValid = isValid && isValidBST(root.left, min, root.val);
-    }
-
-    if (root.right) {
-        isValid = isValid && isValidBST(root.right, root.val, max);
-    }
-
-    return isValid;
-};
-
-/**
- * Leetcode example iterative approach
- * @param {TreeNode} root
- * @return {boolean}
- */
-var isValidBST = function(root) {
-    let stack = [[root, -Infinity, Infinity]];
-    while (stack.length) {
-        let [node, small, large] = stack.pop();
-        if (small >= node.val || node.val >= large) {
-            return false;
-        }
-        
-        if (node.left) {
-            stack.push([node.left, small, node.val]);
-        }
-        if (node.right) {
-            stack.push([node.right, node.val, large]);
-        }
-    }
+    if (root.val <= min || root.val >= max) return false;
     
-    return true;
-};
-
-/**
- * Leetcode submission
- * function TreeNode(val, left, right) {
- *     this.val = (val===undefined ? 0 : val)
- *     this.left = (left===undefined ? null : left)
- *     this.right = (right===undefined ? null : right)
- * }
- */
-/**
- * @param {TreeNode} root
- * @return {boolean}
- */
-var isValidBST = function(root) {
-    const dfs = (node, min, max) => {
-        if (!node) {
-            return true;
-        }
-
-        if (node.val <= min) {
-            return false;
-        }
-
-        if (node.val >= max) {
-            return false;
-        }
-
-        return dfs(node.left, min, node.val) && dfs(node.right, node.val, max);
-    }
-
-    return dfs(root, -Infinity, Infinity);
+    return isValidBST(root.left, min, root.val) && isValidBST(root.right, root.val, max);
 };
