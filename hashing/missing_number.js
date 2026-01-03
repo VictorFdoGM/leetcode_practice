@@ -34,6 +34,20 @@ var missingNumber = function(nums) {
 };
 
 /**
+ * Using Bit Manipulation, space O(1), and O(n) runtime
+ * @param {number[]} nums
+ * @return {number}
+ */
+var missingNumber = function(nums) {
+    
+    let missing = nums.length;
+    for (let i = 0; i < nums.length; i++) {
+        missing ^= i ^ nums[i];
+    }
+    return missing;
+};
+
+/**
  * Using Gauss' Formula, space O(1), and O(n) runtime
  * @param {number[]} nums
  * @return {number}
